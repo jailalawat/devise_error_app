@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Tracksmsurl</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin/application', 'data-turbolinks-track': 'reload' %>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"> -->
+  </head>
+
+  <body>
+    <article>
+      <div class="box-tabs">  
+        <div class="container">
+          <%= render :partial=> "/shared/admin_header" if admin_signed_in? %>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

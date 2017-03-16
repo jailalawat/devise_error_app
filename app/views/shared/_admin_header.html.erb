@@ -1,0 +1,16 @@
+<ul class="nav nav-tabs" role="tablist">
+ 
+  <li role="presentation" class="<%= @dashboard ? 'active' : '' %> ">  
+    <%= link_to admin_dashboard_index_path() do %>
+      Activity <i class="fa fa-bar-chart" aria-hidden="true"></i>
+    <% end %>
+  </li>
+
+  
+  <li role="presentation">
+    <%= link_to destroy_admin_session_path(), :method=>:delete do %>
+      Sign Out <i class="fa fa-sign-out" aria-hidden="true"></i>
+    <% end %>
+  </li>
+</ul>
+

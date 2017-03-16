@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Activity</h1>
+
+<div class="table-responsive"> 
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Track Url</th>
+        <th>Campaign</th>
+        <th>Message</th>
+        <th>Ip Address</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Full Address</th>
+      </tr>
+    </thead> 
+    <tbody>
+      <% @tracking_infos.each do |tracking_info| %>
+        <tr>
+          <td><%= tracking_info.sms_send.track_url.url %></td>
+          <td><%= tracking_info.sms_send.campaign.name %></td>
+          <td><%= tracking_info.sms_send.message %></td>
+          <td><%= tracking_info.ip_address %></td>
+          <td><%= tracking_info.country %></td>
+          <td><%= tracking_info.city %></td>
+          <td><%= tracking_info.state_name %></td>
+          <td><%= tracking_info.full_address %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="box-pagination">
+  <%= will_paginate @tracking_infos %>
+</div>
+
